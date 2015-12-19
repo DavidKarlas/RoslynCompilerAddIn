@@ -10,9 +10,11 @@ namespace RoslynCompilerAddIn
 	{
 		protected override Task<TargetEvaluationResult> OnRunTarget(ProgressMonitor monitor, string target, ConfigurationSelector configuration, TargetEvaluationContext context)
 		{
-			context.GlobalProperties.SetValue("CscToolExe", "csc.exe");
-			context.GlobalProperties.SetValue("CscToolPath", Path.Combine(Path.GetDirectoryName(typeof(ProjectExtension).Assembly.Location), "RoslynCompilerFiles"));
-			context.GlobalProperties.SetValue("DebugType", "portable");
+			if (Commands.SelectActiveCompilerHandler.IsRoslynCompilerSet) {
+				context.GlobalProperties.SetValue("CscToolExe", "csc.exe");
+				context.GlobalProperties.SetValue("CscToolPath", Path.Combine(Path.GetDirectoryName(typeof(ProjectExtension).Assembly.Location), "RoslynCompilerFiles"));
+				context.GlobalProperties.SetValue("DebugType", "portable");
+			}
 			return base.OnRunTarget(monitor, target, configuration, context);
 		}
 	}

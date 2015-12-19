@@ -5,4 +5,18 @@
 	<Extension path="/MonoDevelop/ProjectModel/ProjectModelExtensions">
 		<Class class="RoslynCompilerAddIn.ProjectExtension" />
 	</Extension>
+	<Extension path="/MonoDevelop/Ide/Commands">
+		<Command id="RoslynCompilerAddIn.Commands.SelectActiveCompiler"
+			type="radio|array"
+			defaultHandler="RoslynCompilerAddIn.Commands.SelectActiveCompilerHandler"
+			_label="Active Compiler" />
+	</Extension>
+	<Extension path="/MonoDevelop/Ide/MainMenu/Project">
+		<ItemSet id="SelectActiveCompiler"
+			_label="Active Compiler"
+			insertafter="SelectActiveRuntime"
+			autohide="true">
+			<CommandItem id="RoslynCompilerAddIn.Commands.SelectActiveCompiler" />
+		</ItemSet>
+	</Extension>
 </ExtensionModel>

@@ -14,4 +14,28 @@ Global
 		{2A325629-930F-4DB8-835A-4690DA8E2B1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A325629-930F-4DB8-835A-4690DA8E2B1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.TextStylePolicy = $1
+		$1.inheritsSet = VisualStudio
+		$1.scope = text/x-csharp
+		$1.TabsToSpaces = False
+		$1.inheritsScope = text/plain
+		$0.XmlFormattingPolicy = $2
+		$2.DefaultFormat = $3
+		$3.MaxAttributesPerLine = 1
+		$2.inheritsSet = Mono
+		$2.inheritsScope = application/xml
+		$2.scope = application/xml
+		$0.CSharpFormattingPolicy = $4
+		$4.inheritsSet = Mono
+		$4.inheritsScope = text/x-csharp
+		$4.scope = text/x-csharp
+		$4.SpacingAfterMethodDeclarationName = False
+		$4.SpaceAfterMethodCallName = False
+		$4.SpaceBeforeOpenSquareBracket = False
+		$0.DotNetNamingPolicy = $5
+		$5.DirectoryNamespaceAssociation = None
+		$5.ResourceNamePolicy = FileFormatDefault
+	EndGlobalSection
 EndGlobal

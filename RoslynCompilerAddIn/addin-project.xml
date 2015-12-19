@@ -1,0 +1,7 @@
+﻿<AddinProject appVersion="6.0">
+	<Project platforms="Mac">
+		<AddinFile>RoslynCompilerAddIn/bin/Debug/RoslynCompilerAddIn.dll</AddinFile>
+		<BuildFile>RoslynCompilerAddIn.sln</BuildFile>
+		<BuildConfiguration>Debug</BuildConfiguration>
+	</Project>
+</AddinProject>

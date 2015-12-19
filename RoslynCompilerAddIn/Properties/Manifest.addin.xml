@@ -2,4 +2,7 @@
 <ExtensionModel>
 	<Runtime>
 	</Runtime>
+	<Extension path="/MonoDevelop/ProjectModel/ProjectModelExtensions">
+		<Class class="RoslynCompilerAddIn.ProjectExtension" />
+	</Extension>
 </ExtensionModel>

@@ -1,0 +1,27 @@
+From c912c6e5879af5594bf73176267220d9bd8e0a0b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?David=20Karlas=CC=8C?= <david.karlas@xamarin.com>
+Date: Sat, 19 Dec 2015 20:39:15 +0100
+Subject: [PATCH] Csc.exe force /publicsign when /keyfile: defined
+
+---
+ src/Compilers/CSharp/csc/Csc.cs | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/src/Compilers/CSharp/csc/Csc.cs b/src/Compilers/CSharp/csc/Csc.cs
+index d2a9367..b36cb68 100644
+--- a/src/Compilers/CSharp/csc/Csc.cs
++++ b/src/Compilers/CSharp/csc/Csc.cs
+@@ -24,7 +24,9 @@ internal static int Run(string clientDirectory, string sdkDirectory, string[] ar
+ 
+             var responseFile = Path.Combine(clientDirectory, CSharpCompiler.ResponseFileName);
+             Csc compiler = new Csc(responseFile, clientDirectory, Directory.GetCurrentDirectory(), sdkDirectory, args, analyzerLoader);
+-
++			if (compiler.Arguments.CompilationOptions.CryptoKeyFile != null) {
++				compiler.Arguments.CompilationOptions = compiler.Arguments.CompilationOptions.WithPublicSign (true);
++			}
+             return ConsoleUtil.RunWithOutput(compiler.Arguments.Utf8Output, (textWriterOut, _) => compiler.Run(textWriterOut));
+         }
+ 
+-- 
+2.2.1
+

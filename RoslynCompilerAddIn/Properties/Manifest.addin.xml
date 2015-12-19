@@ -1,6 +1,12 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ExtensionModel>
 	<Runtime>
+		<Import file="RoslynCompilerFiles/csc.exe" />
+		<Import file="RoslynCompilerFiles/System.Collections.Immutable.dll" />
+		<Import file="RoslynCompilerFiles/System.Reflection.Metadata.dll" />
+		<Import file="RoslynCompilerFiles/Microsoft.CodeAnalysis.dll" />
+		<Import file="RoslynCompilerFiles/Microsoft.CodeAnalysis.CSharp.dll" />
+		<Import file="RoslynCompilerFiles/" />
 	</Runtime>
 	<Extension path="/MonoDevelop/ProjectModel/ProjectModelExtensions">
 		<Class class="RoslynCompilerAddIn.ProjectExtension" />
